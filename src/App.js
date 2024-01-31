@@ -3,9 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  Notification.requestPermission().then();
+
+  function msg(){
+    navigator.serviceWorker.controller.postMessage({
+      message:'KABOOM'
+    });
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
+        <button onClick ={msg}>알라후 악바르</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
