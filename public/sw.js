@@ -24,7 +24,7 @@ self.addEventListener('message',(event)=>{
     self.registration.showNotification('title', option);
 })
 self.addEventListener('notificationclick',(event)=>{
-    console.log(event.action);
+    console.log(event);
     console.log(clients);
     if(event.action == 'open'){
         //자세히보기
